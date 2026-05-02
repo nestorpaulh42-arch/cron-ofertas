@@ -53,7 +53,7 @@ def scrape(url):
     return resultados[:5]
 
 def main():
-    mensaje = "📢 OFERTAS INGENIERÍA CIVIL\n\n"
+    mensaje = "🚀 PRUEBA DESDE GITHUB FUNCIONANDO\n\n"
     total = 0
 
     for ciudad, urls in FUENTES.items():
