@@ -1,9 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
 import os
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+TOKEN = os.getenv("8780839698:AAG4Xh6OfFeDinsAfm9anoGm8U_9_n6s4Z4")
+CHAT_ID = os.getenv("-1003749638020")
+
+print("TOKEN:", TOKEN)
+print("CHAT_ID:", CHAT_ID)
 
 def enviar(msg):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
@@ -11,15 +13,11 @@ def enviar(msg):
     print("RESPUESTA TELEGRAM:", r.text)
 
 def main():
-    mensaje = "🚀 PRUEBA FUNCIONANDO DESDE GITHUB"
+    if not TOKEN or not CHAT_ID:
+        print("❌ VARIABLES VACÍAS")
+        return
 
-    try:
-        r = requests.get("https://www.google.com")
-        mensaje += "\n\nInternet OK ✅"
-
-    except Exception as e:
-        mensaje = f"❌ ERROR INTERNET:\n{str(e)}"
-
+    mensaje = "🚀 MENSAJE DE PRUEBA DESDE GITHUB"
     enviar(mensaje)
 
 if __name__ == "__main__":
